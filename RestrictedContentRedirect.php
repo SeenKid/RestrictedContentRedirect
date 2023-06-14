@@ -10,11 +10,16 @@
 
 function redirection()
 {
+   // prends l'ID de la page que l'utilisateur essaie de charger
    $pageid = get_queried_object_id();
 
+   // check si l'utilisateur est connecté ou non
    if (!is_user_logged_in()) {
-      if (is_page(array('BLOCKED_PAGE1', 'BLOCKED_PAGE2'))) {
-         wp_redirect('REDIRECT_URL');
+
+      // Les pages bloquées pour les utilisateurs non connectés
+      if (is_page(array('test1'))) { 
+         // URL de redirection
+         wp_redirect('http://localhost/wordpress/login');
          exit();
       }
    }
