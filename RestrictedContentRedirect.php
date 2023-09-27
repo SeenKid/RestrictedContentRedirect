@@ -40,10 +40,10 @@ function redirection()
    if (!is_user_logged_in()) {
 
       // Les pages bloquées pour les utilisateurs non connectés
-      foreach ($geonontisse as $check) {
+      foreach ($pageid as $check) {
          if (strpos(strtolower($uri), strtolower($check)) !== false) {
             // URL de redirection
-            wp_redirect('https://dev.mc2sarl.ch/geonontisse/');
+            wp_redirect('your redirect url');
             exit();
          }
       }
